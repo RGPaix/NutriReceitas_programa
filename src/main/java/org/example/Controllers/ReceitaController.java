@@ -1,12 +1,12 @@
-package Controllers;
+package org.example.Controllers;
 
-import Services.ApiService;
+import org.example.Services.ApiService;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import models.Receita;
-import models.Usuario;
+import org.example.models.Receita;
+import org.example.models.Usuario;
 
 public class ReceitaController {
     @FXML private TextField nomeField;

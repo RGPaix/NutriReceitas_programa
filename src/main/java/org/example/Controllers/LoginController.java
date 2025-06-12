@@ -1,6 +1,6 @@
-package Controllers;
+package org.example.Controllers;
 
-import Services.ApiService;
+import org.example.Services.ApiService;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,7 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import models.Usuario;
+import org.example.models.Usuario;
 
 import java.io.IOException;
 

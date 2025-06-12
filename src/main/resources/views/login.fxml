@@ -16,7 +16,7 @@
                 <!-- Header com logo/ícone -->
                 <VBox alignment="CENTER" spacing="10.0">
                     <children>
-                        <Label styleClass="app-title" text="🍽️ NutriReceitas" textFill="#2c3e50">
+                        <Label styleClass="app-title" text="🍽 NutriReceitas" textFill="#2c3e50">
                             <font>
                                 <Font name="System Bold" size="28.0" />
                             </font>

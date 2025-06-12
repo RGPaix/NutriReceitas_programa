@@ -1,10 +1,10 @@
-package Services;
+package org.example.Services;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import models.Receita;
-import models.Usuario;
-import models.UsuarioLogin;
+import org.example.models.Receita;
+import org.example.models.Usuario;
+import org.example.models.UsuarioLogin;
 
 
 import java.io.IOException;

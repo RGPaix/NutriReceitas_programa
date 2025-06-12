@@ -1,9 +1,7 @@
-package Controllers;
+package org.example.Controllers;
 
-import Services.ApiService;
+import org.example.Services.ApiService;
 import javafx.application.Platform;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -16,8 +14,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import models.Receita;
-import models.Usuario;
+import org.example.models.Receita;
+import org.example.models.Usuario;
 
 import java.io.IOException;
 import java.util.List;

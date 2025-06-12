@@ -1,4 +1,4 @@
-package models;
+package org.example.models;
 
 public class UsuarioLogin {
     private String email;
