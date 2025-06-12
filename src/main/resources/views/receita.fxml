@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.Controllers.ReceitaController">
+
+    <!-- Header -->
+    <top>
+        <VBox styleClass="header-container">
+            <children>
+                <HBox alignment="CENTER">
+                    <children>
+                        <Label styleClass="form-title" text="📝 Receita" textFill="white">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+                    </padding>
+                </HBox>
+            </children>
+        </VBox>
+    </top>
+
+    <!-- Formulário -->
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="scroll-pane">
+            <content>
+                <VBox spacing="20.0">
+                    <children>
+                        <!-- Informações Básicas -->
+                        <VBox spacing="15.0" styleClass="form-section">
+                            <children>
+                                <Label styleClass="section-title" text="📋 Informações Básicas" textFill="#2c3e50">
+                                    <font>
+                                        <Font name="System Bold" size="16.0" />
+                                    </font>
+                                </Label>
+
+                                <VBox spacing="5.0">
+                                    <children>
+                                        <Label text="Nome da Receita *" textFill="#2c3e50">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="nomeField" promptText="Ex: Bolo de Chocolate"
+                                                   styleClass="custom-text-field" />
+                                    </children>
+                                </VBox>
+
+                                <HBox spacing="20.0">
+                                    <children>
+                                        <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                                            <children>
+                                                <Label text="Tempo de Preparo (minutos) *" textFill="#2c3e50">
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <Spinner fx:id="tempoSpinner" styleClass="custom-spinner" />
+                                            </children>
+                                        </VBox>
+
+                                        <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                                            <children>
+                                                <Label text="Serve quantas pessoas *" textFill="#2c3e50">
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <Spinner fx:id="serveSpinner" styleClass="custom-spinner" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+
+                        <!-- Ingredientes -->
+                        <VBox spacing="15.0" styleClass="form-section">
+                            <children>
+                                <Label styleClass="section-title" text="🥕 Ingredientes" textFill="#2c3e50">
+                                    <font>
+                                        <Font name="System Bold" size="16.0" />
+                                    </font>
+                                </Label>
+
+                                <VBox spacing="5.0">
+                                    <children>
+                                        <Label text="Liste todos os ingredientes necessários *" textFill="#2c3e50">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <TextArea fx:id="ingredientesArea" prefRowCount="8"
+                                                  promptText="Ex:&#10;- 2 xícaras de farinha de trigo&#10;- 1 xícara de açúcar&#10;- 3 ovos&#10;- 200ml de leite"
+                                                  styleClass="custom-text-area" wrapText="true" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+
+                        <!-- Modo de Preparo -->
+                        <VBox spacing="15.0" styleClass="form-section">
+                            <children>
+                                <Label styleClass="section-title" text="👨‍🍳 Modo de Preparo" textFill="#2c3e50">
+                                    <font>
+                                        <Font name="System Bold" size="16.0" />
+                                    </font>
+                                </Label>
+
+                                <VBox spacing="5.0">
+                                    <children>
+                                        <Label text="Descreva o passo a passo da preparação *" textFill="#2c3e50">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <TextArea fx:id="descricaoArea" prefRowCount="10"
+                                                  promptText="Ex:&#10;1. Pré-aqueça o forno a 180°C&#10;2. Em uma tigela, misture os ingredientes secos...&#10;3. Adicione os ovos um por vez...&#10;4. Asse por 45 minutos ou até dourar"
+                                                  styleClass="custom-text-area" wrapText="true" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
+                    </padding>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+    <!-- Footer com Botões -->
+    <bottom>
+        <VBox styleClass="footer">
+            <children>
+                <!-- Status e Loading -->
+                <HBox alignment="CENTER" spacing="10.0">
+                    <children>
+                        <ProgressIndicator fx:id="progressIndicator" maxHeight="25.0" maxWidth="25.0" />
+                        <Label fx:id="statusLabel" textFill="#e74c3c" wrapText="true" />
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" />
+                    </padding>
+                </HBox>
+
+                <!-- Botões de Ação -->
+                <HBox alignment="CENTER" spacing="20.0">
+                    <children>
+                        <Button fx:id="salvarButton" mnemonicParsing="false"
+                                onAction="#handleSalvar" prefWidth="150.0"
+                                styleClass="primary-button" text="💾 Salvar Receita" />
+
+                        <Button fx:id="cancelarButton" mnemonicParsing="false"
+                                onAction="#handleCancelar" prefWidth="150.0"
+                                styleClass="secondary-button" text="❌ Cancelar" />
+                    </children>
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+                    </padding>
+                </HBox>
+            </children>
+        </VBox>
+    </bottom>
+</BorderPane>

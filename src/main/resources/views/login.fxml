@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.Controllers.LoginController">
+    <center>
+        <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity"
+              minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0"
+              prefWidth="400.0" spacing="20.0" styleClass="login-container"
+              stylesheets="@../css/style.css">
+            <children>
+                <!-- Header com logo/ícone -->
+                <VBox alignment="CENTER" spacing="10.0">
+                    <children>
+                        <Label styleClass="app-title" text="🍽️ NutriReceitas" textFill="#2c3e50">
+                            <font>
+                                <Font name="System Bold" size="28.0" />
+                            </font>
+                        </Label>
+                        <Label styleClass="app-subtitle" text="Gerencie suas receitas favoritas" textFill="#7f8c8d">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+
+                <!-- Formulário de Login -->
+                <VBox alignment="CENTER" spacing="15.0" styleClass="form-container">
+                    <children>
+                        <Label styleClass="form-title" text="Entrar na sua conta" textFill="#34495e">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+
+                        <VBox spacing="5.0">
+                            <children>
+                                <Label text="Email:" textFill="#2c3e50">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="emailField" promptText="Digite seu email"
+                                           styleClass="custom-text-field" />
+                            </children>
+                        </VBox>
+
+                        <VBox spacing="5.0">
+                            <children>
+                                <Label text="Senha:" textFill="#2c3e50">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </Label>
+                                <PasswordField fx:id="senhaField" promptText="Digite sua senha"
+                                               styleClass="custom-text-field" />
+                            </children>
+                        </VBox>
+
+                        <!-- Botões -->
+                        <VBox alignment="CENTER" spacing="10.0">
+                            <children>
+                                <Button fx:id="loginButton" mnemonicParsing="false"
+                                        onAction="#handleLogin" prefWidth="200.0"
+                                        styleClass="primary-button" text="Entrar" />
+
+                                <Button fx:id="cadastroButton" mnemonicParsing="false"
+                                        onAction="#handleCadastro" prefWidth="200.0"
+                                        styleClass="secondary-button" text="Criar Conta" />
+                            </children>
+                        </VBox>
+
+                        <!-- Status e Loading -->
+                        <VBox alignment="CENTER" spacing="10.0">
+                            <children>
+                                <ProgressIndicator fx:id="progressIndicator" maxHeight="30.0"
+                                                   maxWidth="30.0" />
+                                <Label fx:id="statusLabel" textFill="#e74c3c" wrapText="true" />
+                            </children>
+                        </VBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+            </padding>
+        </VBox>
+    </center>
+</BorderPane>

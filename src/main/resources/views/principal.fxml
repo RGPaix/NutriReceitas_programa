@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.Controllers.MainController">
+
+    <!-- Header -->
+    <top>
+        <VBox styleClass="header-container">
+            <children>
+                <HBox alignment="CENTER_LEFT" spacing="20.0">
+                    <children>
+                        <Label styleClass="app-title" text="🍽️ NutriReceitas" textFill="white">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="bemVindoLabel" styleClass="welcome-label" text="Bem-vindo!" textFill="white">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+                    </padding>
+                </HBox>
+            </children>
+        </VBox>
+    </top>
+
+    <!-- Conteúdo Principal -->
+    <center>
+        <VBox spacing="20.0">
+            <children>
+                <!-- Barra de Ferramentas -->
+                <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="toolbar">
+                    <children>
+                        <Label text="📚 Minhas Receitas" textFill="#2c3e50">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+
+                        <!-- Campo de Pesquisa -->
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label text="🔍" textFill="#7f8c8d">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="pesquisaField" promptText="Pesquisar receitas..."
+                                           prefWidth="200.0" styleClass="search-field" />
+                            </children>
+                        </HBox>
+
+                        <!-- Botões de Ação -->
+                        <HBox spacing="10.0">
+                            <children>
+                                <Button fx:id="novaReceitaButton" mnemonicParsing="false"
+                                        onAction="#handleNovaReceita" styleClass="primary-button"
+                                        text="➕ Nova Receita" />
+
+                                <Button fx:id="editarButton" mnemonicParsing="false"
+                                        onAction="#handleEditar" styleClass="edit-button"
+                                        text="✏️ Editar" />
+
+                                <Button fx:id="excluirButton" mnemonicParsing="false"
+                                        onAction="#handleExcluir" styleClass="delete-button"
+                                        text="🗑️ Excluir" />
+
+                                <Button fx:id="atualizarButton" mnemonicParsing="false"
+                                        onAction="#handleAtualizar" styleClass="refresh-button"
+                                        text="🔄 Atualizar" />
+                            </children>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+                    </padding>
+                </HBox>
+
+                <!-- Tabela de Receitas -->
+                <VBox VBox.vgrow="ALWAYS">
+                    <children>
+                        <TableView fx:id="receitasTable" styleClass="custom-table" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="nomeColumn" prefWidth="300.0"
+                                             styleClass="table-column" text="Nome da Receita" />
+                                <TableColumn fx:id="tempoColumn" prefWidth="150.0"
+                                             styleClass="table-column" text="Tempo (min)" />
+                                <TableColumn fx:id="serveColumn" prefWidth="120.0"
+                                             styleClass="table-column" text="Porções" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+        </VBox>
+    </center>
+
+    <!-- Footer -->
+    <bottom>
+        <HBox alignment="CENTER_LEFT" styleClass="footer">
+            <children>
+                <Label fx:id="totalReceitasLabel" text="Total: 0 receitas" textFill="#7f8c8d">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <ProgressIndicator fx:id="progressIndicator" maxHeight="20.0" maxWidth="20.0" />
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+            </padding>
+        </HBox>
+    </bottom>
+</BorderPane>
